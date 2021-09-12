@@ -7,12 +7,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/service2")
+@RequestMapping("/services")
 public class Service2Controller {
 
 	@GetMapping("/message")
 	public ResponseEntity<String> getMessage() {
-		System.out.println("working");
 		String response = "Hello";
 		
 		ResponseEntity<String> entity = new ResponseEntity<String>(response, HttpStatus.OK);

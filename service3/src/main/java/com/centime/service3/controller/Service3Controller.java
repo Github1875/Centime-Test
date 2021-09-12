@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.centime.service3.bean.Details;
 
 @RestController
-@RequestMapping("/service3")
+@RequestMapping("/services")
 public class Service3Controller {
 
 	@PostMapping("/concate")
