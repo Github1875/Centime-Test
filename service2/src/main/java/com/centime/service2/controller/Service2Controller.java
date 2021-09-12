@@ -1,4 +1,4 @@
-package com.centime.controller;
+package com.centime.service2.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

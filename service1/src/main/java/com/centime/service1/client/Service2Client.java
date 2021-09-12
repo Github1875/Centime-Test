@@ -1,4 +1,4 @@
-package com.centime.service;
+package com.centime.service1.client;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;

@@ -1,4 +1,4 @@
-package com.centime.controller;
+package com.centime.service3.controller;
 
 import javax.validation.Valid;
 
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.centime.bean.Details;
+import com.centime.service3.bean.Details;
 
 @RestController
 @RequestMapping("/service3")

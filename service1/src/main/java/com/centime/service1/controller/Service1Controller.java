@@ -1,4 +1,4 @@
-package com.centime.controller;
+package com.centime.service1.controller;
 
 import javax.validation.Valid;
 
@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.centime.bean.Details;
-import com.centime.service.Service2Client;
-import com.centime.service.Service3Client;
+import com.centime.service1.bean.Details;
+import com.centime.service1.client.Service2Client;
+import com.centime.service1.client.Service3Client;
 
 @RestController
 @RequestMapping("/service1")

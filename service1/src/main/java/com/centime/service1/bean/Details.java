@@ -1,4 +1,4 @@
-package com.centime.bean;
+package com.centime.service1.bean;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
