@@ -1,5 +1,6 @@
 package com.centime.service1.controller;
 
+import java.util.Collection;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -55,11 +56,10 @@ public class Service1Controller {
 	}
 	
 	@GetMapping("/legends/details")
-	public List<Response> getAllLegends() {
+	public Collection<Response> getAllLegends() {
 		
 		List<Legend> elements = legendService.fetchAllLegends();
-		List<Response> result = helper.buildNestedJson(elements);
-		return result;
+		return helper.buildNestedJson(elements);
 	}
 	
 	@PostMapping("/legends")

@@ -1,16 +1,22 @@
 package com.centime.service1.bean;
 
+import java.util.ArrayList;
 import java.util.List;
-
-import javax.validation.constraints.NotBlank;
 
 public class Response {
 
-	@NotBlank
 	private String name;
 	
-	@NotBlank
 	private List<Response> subClasses;
+
+	public Response() {
+		super();
+	}
+
+	public Response(String name) {
+		super();
+		this.name = name;
+	}
 
 	public String getName() {
 		return name;
@@ -21,6 +27,9 @@ public class Response {
 	}
 
 	public List<Response> getSubClasses() {
+		if(null == this.subClasses) {
+			this.subClasses = new ArrayList<Response>();
+		}
 		return subClasses;
 	}
 
