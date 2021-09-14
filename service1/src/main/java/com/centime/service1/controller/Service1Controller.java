@@ -44,8 +44,8 @@ public class Service1Controller {
 	@PostMapping("/concate")
 	public ResponseEntity<String> concateResponses(@Valid @RequestBody Details requestBody) {
 	
-		String response1 = restTemplate.getForObject("http://service2/services/message", String.class);
-		String response2 = restTemplate.postForObject("http://service3/services/concate", requestBody, String.class);
+		String response1 = restTemplate.getForObject("http://message-service/services/message", String.class);
+		String response2 = restTemplate.postForObject("http://concate-service/services/concate", requestBody, String.class);
 		return new ResponseEntity<String>(response1+response2, HttpStatus.OK);
 	}
 	
