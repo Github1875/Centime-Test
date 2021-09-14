@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.validation.Valid;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,6 +27,8 @@ import com.centime.service1.service.LegendService;
 @RequestMapping("/services")
 public class Service1Controller {
 
+	private static Logger logger = Logger.getLogger(Service1Controller.class);
+	 
 	@Autowired
 	private RestTemplate restTemplate;
 	
@@ -38,12 +41,14 @@ public class Service1Controller {
 	@GetMapping("/status")
 	public String getServiceStatus() {
 		
+		logger.info("Received API call - check Service Status");
 		return "Up";
 	}
 	
 	@PostMapping("/concate")
 	public ResponseEntity<String> concateResponses(@Valid @RequestBody Details requestBody) {
 	
+		logger.info("Received API call - concateResponses");
 		String response1 = restTemplate.getForObject("http://message-service/services/message", String.class);
 		String response2 = restTemplate.postForObject("http://concate-service/services/concate", requestBody, String.class);
 		return new ResponseEntity<String>(response1+response2, HttpStatus.OK);
@@ -52,18 +57,21 @@ public class Service1Controller {
 	@GetMapping("/legends/{id}")
 	public Legend getLegendDetails(@PathVariable("id") int id) {
 		
+		logger.info("Received API call - getDetails by id "+id);
 		return legendService.findLegend(id);
 	}
 	
 	@GetMapping("/legends/details")
 	public Collection<Response> getAllLegends() {
 		
+		logger.info("Received API call - fetch all Legend details");
 		List<Legend> elements = legendService.fetchAllLegends();
 		return helper.buildNestedJson(elements);
 	}
 	
 	@PostMapping("/legends")
 	public void saveDetails(@RequestBody List<Legend> request) {
+		logger.info("Received API call - save legegnd details");
 		legendService.save(request);
 	}
 }
